@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangout Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hangout Survey</h1>
+    <form id="surveyForm">
+        <label for="rating">Rate the hangout (1-10):</label>
+        <input type="number" id="rating" min="1" max="10" required><br>
+
+        <label for="annoyed">At any point in the day did I annoy you?</label>
+        <select id="annoyed" onchange="toggleComment('annoyedComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="annoyedComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="overstay">Did I overstay my welcome?</label>
+        <select id="overstay" onchange="toggleComment('overstayComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="overstayComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="offputting">Did I say or do something that was or could have been off-putting?</label>
+        <select id="offputting" onchange="toggleComment('offputtingComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="offputtingComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="music">Did I play good music on aux?</label>
+        <select id="music" onchange="toggleComment('musicComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="musicComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="sure">Are you sure I didn’t annoy you?</label>
+        <select id="sure" onchange="toggleComment('sureComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="sureComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="hangout_again">Would you hang out with me again? (and answer honestly)</label>
+        <select id="hangout_again" onchange="toggleComment('hangoutAgainComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="hangoutAgainComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="weird">Was I being weird?</label>
+        <select id="weird" onchange="toggleComment('weirdComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="weirdComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="like">Do you actually like hanging out with me?</label>
+        <select id="like" onchange="toggleComment('likeComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="likeComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <label for="hate">Do you hate me?</label>
+        <select id="hate" onchange="toggleComment('hateComment', this.value)" required>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <textarea id="hateComment" placeholder="Please explain..." style="display:none;"></textarea><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
